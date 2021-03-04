@@ -1,0 +1,65 @@
+﻿<div id="contact">
+    <h1>Sie möchten mir etwas sagen?</h1>
+
+    <p>
+        Hier haben Sie die Möglichkeit, mir eine Nachricht, Kritik aber auch Lob zu hinterlassen. 
+    </p>
+
+    <p>
+        Wenn Sie meinen Newsletter beziehen möchten, geben Sie bitte Ihre eMail Adresse und Ihre bevorzugte
+        Sprache an. Sie können den Newsletter jederzeit wieder abbestellen.
+    </p>
+
+    <form id="contactForm">
+        <fieldset>
+            <legend>Hinterlassen sie mir ein paar Zeilen...?</legend>
+
+            <label class="accessibleFormfield"  id="formLabFirstName" for="formFirstName">Vorname</label><br>
+            <input class="accessibleFormfield"  id="formFirstName" name="formFirstName" type="text" />
+            <br />
+
+            <label class="accessibleFormfield"  id="formLabShureName" for="formShureName">Nachname</label><br />
+            <input class="accessibleFormfield"  id="formShureName" name="formShureName" type="text" />
+            <br />
+
+            <label class="accessibleFormfield"  id="formLabComment" for="formComment">Platz für Lob und Kritik</label><br />
+            <textarea class="accessibleFormfield"  id="formComment" name="formComment" rows="5" cols="30"></textarea>
+            <br />
+        </fieldset>
+
+        <fieldset>
+            <legend>Möchten Sie meinen Newsletter beziehen...?</legend>
+
+            <label class="accessibleFormfield" id="formLabSubscribeNewsletter" for="formSubscribeNewsletter">Ja, ich möchte den Newsletter beziehen</label>
+            <input class="accessibleFormfield" id="formSubscribeNewsletter" name="formSubscribeNewsletter" type="checkbox" onchange="toggleNewsletterFields()" />
+            <br />
+
+            <label class="notAccessibleNewsletterField" id="formLabMail" for="formMail">Ihre eMail</label><br />
+            <input class="notAccessibleNewsletterField" id="formMail" name="formMail" type="email" disabled />
+            <br />
+
+            <label class="notAccessibleNewsletterField" id="formLabLanguage" for="formLanguage">Welche Sprache bevorzugen Sie?</label><br />
+            <select class="notAccessibleNewsletterField" id="formLanguage" name="formLanguage" size="1" disabled>
+                <option>Deutsch</option>
+                <option>Englisch</option>
+                <option>Französisch</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Möchten Sie auf eine besondere Seite hinweisen...?</legend>
+
+            <label class="accessibleFormfield" id="formLabSitePromotion" for="formSitePromotion">Ich möchte auf eine Webseite aufmerksam machen</label>
+            <input class="accessibleFormfield" id="formSitePromotion" name="formSitePromotion" type="checkbox" onchange="toggleSitePromotionFields()" />
+            <br />
+
+            <label class="notAccessibleSitePromotionField" id="formLabSiteName" for="formSiteName">Adresse der Seite</label><br />
+            <input class="notAccessibleSitePromotionField" id="formSiteName" name="formSiteName" type="text" disabled />
+            <br />
+
+        </fieldset>
+
+        <input class="accessibleFormfieldButton" id="submitFormButton" value="Absenden" type="submit" />
+        <input class="accessibleFormfieldButton" id="cancleFormButton" value="Löschen" type="reset" onclick="forceToggleContactFields()" />
+    </form>
+</div>

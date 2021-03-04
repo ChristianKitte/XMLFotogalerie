@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<database xsi:noNamespaceSchemaLocation="database.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!--The Rootfolder for images.-->
+	<root>./img</root>
+	<!--The path to an favicon icon.-->
+	<favicon>img/img_favicon/feather_favicon.ico</favicon>
+	<!--The subpathes for small, large and preview.-->
+	<sizes>
+		<small>img_320</small>
+    <middle>img_640</middle>
+		<large>img_compressed</large>
+		<preview>img_compressed</preview>
+	</sizes>
+	<!--The images used for the preview. Enabled must be true. Period greater 0 (milisecond)-->
+	<imgShow enabled="true" period="5000">
+		<showImage>./img/img_320/Blumen/20100708_0048.JPG</showImage>
+		<showImage>./img/img_320/Hermannsturm/DSC05006.JPG</showImage>
+		<showImage>./img/img_320/Teich/DSC04050.JPG</showImage>
+		<showImage>./img/img_320/Varusschlacht/DSC00628.JPG</showImage>
+		<showImage>./img/img_320/Winterimpression/IMG_3677.JPG</showImage>
+	</imgShow>
+	<!--Defines groups of pictures.-->
+	<groups>
+		<!--Each group must have an unique id and a group path target to the images subfolder.-->
+		<group id="ImageGrpID-1" path="blumen">
+			<!--Holds images-->
+			<images>
+				<!--One entry for each image (use the name and its extension)-->
+				<image>20100708_0044.JPG</image>
+				<image>20100708_0047.JPG</image>
+				<image>20100708_0048.JPG</image>
+				<image>20100708_0049.JPG</image>
+				<image>20100708_0050.JPG</image>
+				<image>20100708_0051.JPG</image>
+				<image>20100708_0053.JPG</image>
+				<image>20100708_0059.JPG</image>
+				<image>20100708_0061.JPG</image>
+			</images>
+		</group>
+		<group id="ImageGrpID-2" path="hermannsturm">
+			<images>
+				<image>DSC04975.JPG</image>
+				<image>DSC04976.JPG</image>
+				<image>DSC04977.JPG</image>
+				<image>DSC04996.JPG</image>
+				<image>DSC05004.JPG</image>
+				<image>DSC05005.JPG</image>
+				<image>DSC05006.JPG</image>
+				<image>DSC05007.JPG</image>
+				<image>DSC05008.JPG</image>
+				<image>DSC05009.JPG</image>
+				<image>DSC05011.JPG</image>
+				<image>DSC05012.JPG</image>
+				<image>DSC05014.JPG</image>
+				<image>DSC05015.JPG</image>
+				<image>DSC05017.JPG</image>
+				<image>DSC05018.JPG</image>
+				<image>DSC05019.JPG</image>
+				<image>DSC05021_bearbeitet.jpg</image>
+				<image>DSC05025.JPG</image>
+				<image>DSC05028.JPG</image>
+				<image>DSC05029.JPG</image>
+				<image>DSC05030.JPG</image>
+				<image>DSC05033.JPG</image>
+				<image>DSC05039.JPG</image>
+				<image>DSC05047.JPG</image>
+				<image>DSC05049.JPG</image>
+				<image>DSC05050.JPG</image>
+				<image>DSC05053.JPG</image>
+				<image>DSC05056_bearbeitet.jpg</image>
+				<image>DSC05057_bearbeitet.jpg</image>
+				<image>DSC05058.JPG</image>
+				<image>DSC05059.JPG</image>
+				<image>DSC05060.JPG</image>
+				<image>DSC05062.JPG</image>
+			</images>
+		</group>
+		<group id="ImageGrpID-3" path="teich">
+			<images>
+				<image>DSC04043.JPG</image>
+				<image>DSC04045.JPG</image>
+				<image>DSC04046.JPG</image>
+				<image>DSC04047.JPG</image>
+				<image>DSC04048.JPG</image>
+				<image>DSC04049.JPG</image>
+				<image>DSC04050.JPG</image>
+				<image>DSC04051.JPG</image>
+				<image>DSC04052.JPG</image>
+				<image>DSC04060.JPG</image>
+				<image>DSC04061.JPG</image>
+				<image>DSC04064.JPG</image>
+				<image>DSC04067.JPG</image>
+				<image>DSC04068.JPG</image>
+				<image>DSC04069.JPG</image>
+				<image>DSC04071.JPG</image>
+				<image>DSC04072.JPG</image>
+				<image>DSC04073.JPG</image>
+				<image>DSC04074.JPG</image>
+				<image>DSC04075.JPG</image>
+				<image>DSC04079.JPG</image>
+				<image>DSC04084.JPG</image>
+				<image>DSC04085.JPG</image>
+				<image>DSC04088.JPG</image>
+				<image>DSC04090.JPG</image>
+				<image>DSC04092.JPG</image>
+			</images>
+		</group>
+		<group id="ImageGrpID-4" path="varusschlacht">
+			<images>
+				<image>DSC00625.JPG</image>
+				<image>DSC00626.JPG</image>
+				<image>DSC00627.JPG</image>
+				<image>DSC00628.JPG</image>
+				<image>DSC00630.JPG</image>
+				<image>DSC00631.JPG</image>
+				<image>DSC00634.JPG</image>
+				<image>DSC00635.JPG</image>
+				<image>DSC00636.JPG</image>
+				<image>DSC00642.JPG</image>
+				<image>DSC00643.JPG</image>
+				<image>DSC00644.JPG</image>
+			</images>
+		</group>
+		<group id="ImageGrpID-5" path="winterimpression">
+			<images>
+				<image>IMG_3673.JPG</image>
+				<image>IMG_3674.JPG</image>
+				<image>IMG_3675.JPG</image>
+				<image>IMG_3676.JPG</image>
+				<image>IMG_3677.JPG</image>
+				<image>IMG_3678.JPG</image>
+				<image>IMG_3679.JPG</image>
+				<image>IMG_3680.JPG</image>
+				<image>IMG_3681.JPG</image>
+				<image>IMG_3682.JPG</image>
+				<image>IMG_3683.JPG</image>
+				<image>IMG_3684.JPG</image>
+				<image>IMG_3686.JPG</image>
+				<image>IMG_3689.JPG</image>
+				<image>IMG_3690.JPG</image>
+				<image>IMG_3691.JPG</image>
+				<image>IMG_3692.JPG</image>
+				<image>IMG_3693.JPG</image>
+				<image>IMG_3695.JPG</image>
+				<image>IMG_3696.JPG</image>
+				<image>IMG_3697.JPG</image>
+				<image>IMG_3700.JPG</image>
+				<image>IMG_3701.JPG</image>
+				<image>IMG_3704.JPG</image>
+				<image>IMG_3706.JPG</image>
+			</images>
+		</group>
+	</groups>
+</database>

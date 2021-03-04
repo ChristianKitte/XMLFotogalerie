@@ -1,0 +1,342 @@
+﻿/*auch wenn utf-8 Standard ist*/
+@charset "utf-8";
+
+/**********************************************************************************************************************************/
+/*COMMON***************************************************************************************************************************/
+/**********************************************************************************************************************************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Main color for the whole page.*/
+body {
+    background-color: rgb(36,30,26);
+}
+
+/*Main color for the whole content region.*/
+#mainContent {
+    background-color: cornsilk;
+}
+
+#mainNav li {
+    list-style: none;
+}
+
+/*color for the selected main navigation.*/
+#mainNav li.selected a {
+    color: red;
+}
+
+/*color for the selected group navigation.*/
+#groupNav li.selected a {
+    color: red;
+}
+
+#groupNav li {
+    list-style: none;
+}
+
+/**********************************************************************************************************************************/
+/*SMALL MEDIA**********************************************************************************************************************/
+/**********************************************************************************************************************************/
+@media only screen and (max-width: 640px) {
+/**********************************************************************************************************************************/
+/*EYE CATCHER IMAGESHOW************************************************************************************************************/
+/**********************************************************************************************************************************/
+
+    #eyeCatcher {
+        display: none;
+    }
+
+    #imgShow {
+        display: none;
+    }
+
+/**********************************************************************************************************************************/
+/*MAIN CONTENT*********************************************************************************************************************/
+/**********************************************************************************************************************************/
+
+    #mainContent {
+        display: block;
+        position: absolute;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        top: 96px;
+        left: 0px;
+        width: 100%;
+        padding: 25px;
+    }
+
+/**********************************************************************************************************************************/
+/*GROUP NAV************************************************************************************************************************/
+/**********************************************************************************************************************************/
+   
+    /*Layout the groupNav. FlyOut from the left.*/
+    #groupNav {
+        display: block;
+        position: absolute;
+        top: 96px;
+        left: 0px;
+        overflow: hidden;
+        background-color: azure;
+    }
+
+        #groupNav.smallShow {
+            width: 50%;
+            transition-duration: 1s;
+        }
+
+        #groupNav.smallHide {
+            width: 0px;
+            transition-duration: 1s;
+        }
+
+        #groupNav figure {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+            transition-duration: 1s;
+        }
+
+            #groupNav figure:hover {
+                opacity: 1;
+                transition-duration: 1s;
+            }
+
+            #groupNav figure img {
+                margin-left: 15%;
+                max-width: 70%;
+            }
+
+            #groupNav figure figcaption {
+                margin-left: 15%;
+                margin-right: 15%;
+                max-width: 70%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                opacity: 0.75;
+            }
+
+                #groupNav figure figcaption p {
+                    display: none;
+                }
+
+/**********************************************************************************************************************************/
+/*MAIN NAV ************************************************************************************************************************/
+/**********************************************************************************************************************************/
+
+    /*Layout the mainNav. FlyOut from the top.*/
+    #mainNav {
+        display: block;
+        position: absolute;
+        top: 96px;
+        left: 0px;
+        width: 100%;
+        overflow: hidden;
+        background-color: azure;
+    }
+
+        #mainNav.smallShow {
+            height: 50%;
+            transition-duration: 1s;
+        }
+
+        #mainNav.smallHide {
+            height: 0px;
+            transition-duration: 1s;
+        }
+
+        #mainNav ul li a {
+            display: flex;
+            width: 90%;
+            height: 15%;
+            margin: 5%;
+            opacity: 0.75;
+            justify-content: center;
+            transition-duration: 1s;
+        }
+
+            #mainNav ul li a:hover {
+                font-size: larger;
+                opacity: 1;
+                transition-duration: 0.5s;
+            }
+
+/**********************************************************************************************************************************/
+/*SMALL BUTTONBAR******************************************************************************************************************/
+/**********************************************************************************************************************************/
+
+    /*Layout the smallButtonBar.*/
+    #smallButtonbar {
+        display: flex;
+        justify-content: space-between;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 96px;
+        background-color: #28aadc;
+    }
+
+    /* smallButtonMiddle mit Kreuz rotierend - Hide */
+    div.smallButtonMiddle {
+        display: none;
+    }
+
+    /*Alle Einstellungen für smallButton zurück setzen.*/
+    .smallButtonLeft > Button, .smallButtonRight > Button {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 96px;
+        height: 96px;
+        font-size: 0;
+        text-indent: -9999px;
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    /*Grundsätzliche Einstellung für smallButton*/
+    .smallButtonLeft > Button, .smallButtonRight > Button {
+        background-color: #28aadc;
+        transition-duration: 3.0s;
+    }
+
+        .smallButtonLeft > Button.is-active, .smallButtonMiddle > Button.is-active, .smallButtonRight > Button.is-active {
+            background-color: #166888;
+        }
+
+
+    /* smallButtonLeft mit Kreuz rotierend */
+    div.smallButtonLeft button span {
+        display: block;
+        position: absolute;
+        top: 44px;
+        left: 18px;
+        right: 18px;
+        height: 8px;
+        background: white;
+        transform: rotate(45deg);
+        transition-duration: 0.4s;
+    }
+
+        div.smallButtonLeft button span::after {
+            position: absolute;
+            display: block;
+            top: 0%;
+            width: 100%;
+            height: 8px;
+            background-color: #fff;
+            content: "";
+            transform: rotate(90deg);
+        }
+
+    div.smallButtonLeft button.is-active span {
+        transform: rotate(90deg);
+    }
+
+    /* smallButtonRight mit Kreuz rotierend */
+    div.smallButtonRight button span {
+        display: block;
+        position: absolute;
+        top: 44px;
+        left: 18px;
+        right: 18px;
+        height: 8px;
+        background: white;
+        transform: rotate(45deg);
+        transition-duration: 0.4s;
+    }
+
+        div.smallButtonRight button span::after {
+            position: absolute;
+            display: block;
+            top: 0%;
+            width: 100%;
+            height: 8px;
+            background-color: #fff;
+            content: "";
+            transform: rotate(90deg);
+        }
+
+    div.smallButtonRight button.is-active span {
+        transform: rotate(90deg);
+    }
+
+/**********************************************************************************************************************************/
+/*IMAGE BOOK***********************************************************************************************************************/
+/**********************************************************************************************************************************/
+
+    .imageBookImage {
+        max-width: 100%;
+        margin: 20px;
+    }
+
+/**********************************************************************************************************************************/
+/*INSTRUCTION SITE*****************************************************************************************************************/
+/**********************************************************************************************************************************/
+
+    #smallInstruction {
+        display: normal;
+    }
+
+    #middleInstruction {
+        display: none;
+    }
+
+    #desctopInstruction {
+        display: none;
+    }
+
+    #smallInstructionArrow {
+        display: flex;
+        box-sizing: border-box;
+        width: 25%;
+        height: 25%;
+    }
+
+        #smallInstructionArrow img {
+            width: 100%;
+            height: 100%;
+        }
+
+            #smallInstructionArrow img.instructionArrow {
+                animation: rotate_0_min180 2s;
+                transform: rotate(-180deg);
+            }
+
+            #smallInstructionArrow img.instructionArrow2 {
+                animation: scale_0_min1 2s;
+                transform: scaleY(-1);
+            }
+
+    @keyframes rotate_0_min180 {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @keyframes scale_0_min1 {
+        from {
+            transform: scaleY(0);
+        }
+
+        to {
+            transform: scaleY(-1);
+        }
+    }
+}

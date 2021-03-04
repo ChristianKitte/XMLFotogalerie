@@ -1,0 +1,1745 @@
+﻿/*auch wenn utf-8 Standard ist*/
+@charset "utf-8";
+
+
+@font-face {
+    font-family: 'IndieFlower';
+    src: url('../font/Indie_Flower/IndieFlower.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RobotoMono-Medium';
+    src: url('../font/Roboto_Mono/RobotoMono-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MavenPro-Medium';
+    src: url('../font/Maven_Pro/MavenPro-Medium.ttf') format('truetype');
+}
+
+/**********************************************************************************************************************************/
+/*COMMON***************************************************************************************************************************/
+/**********************************************************************************************************************************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Main color for the whole page.*/
+body {
+    background-color: rgb(36,30,26);
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*Main color for the whole content region.*/
+#mainContent {
+    background-color: cornsilk;
+}
+
+#mainNav li {
+    list-style: none;
+}
+
+    /*color for the selected main navigation.*/
+    #mainNav li.selected a {
+        color: red;
+    }
+
+/*color for the selected group navigation.*/
+#groupNav li.selected a {
+    color: red;
+}
+
+#groupNav li {
+    list-style: none;
+}
+
+/**********************************************************************************************************************************/
+/*FONTSETTING**********************************************************************************************************************/
+/**********************************************************************************************************************************/
+
+h1 {
+    /*font-family: IndieFlower;*/
+}
+
+h2 {
+    font-family: MavenPro-Medium;
+}
+
+h3 {
+}
+
+h4 {
+}
+
+p {
+    /*font-family: RobotoMono-Medium;*/
+}
+
+.groupDescriptorHead {
+    /*font-family: IndieFlower;*/
+}
+
+/**********************************************************************************************************************************/
+/*SMALL MEDIA**********************************************************************************************************************/
+/**********************************************************************************************************************************/
+@media only screen and (max-width: 640px) {
+    /**********************************************************************************************************************************/
+    /*COMMON***************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    body {
+        background-color: rgb(36,30,26);
+        transition-duration: 1s;
+    }
+
+    /**********************************************************************************************************************************/
+    /*PREVIEW**************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #previewImageContent.hidePreviewImage {
+        display: none;
+    }
+
+    #previewImageContent.showPreviewImage {
+        display: block;
+        position: fixed;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.9);
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+        #previewImageContent.showPreviewImage span:hover {
+            cursor: pointer;
+        }
+
+        #previewImageContent.showPreviewImage span {
+            display: block;
+            position: absolute;
+            border-radius: 4.5px;
+            top: 40px;
+            right: 10px;
+            width: 50px;
+            height: 8px;
+            transform: rotate(45deg);
+            background-color: whitesmoke;
+            transition-duration: 1s;
+        }
+
+            #previewImageContent.showPreviewImage span:after {
+                display: block;
+                position: absolute;
+                border-radius: 4.5px;
+                top: 0px;
+                right: 0px;
+                width: 50px;
+                height: 8px;
+                content: "";
+                transform: rotate(90deg);
+                background-color: whitesmoke;
+                transition-duration: 1s;
+            }
+
+        #previewImageContent.showPreviewImage img {
+            display: block;
+            margin: auto;
+            margin-top: calc(2% + 75px);
+            width: 90%;
+            transition-duration: 1s;
+            animation-name: zoomIn;
+            animation-duration: 1s;
+            border-radius: 10px;
+        }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes zoomOut {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(0);
+        }
+    }
+
+    /**********************************************************************************************************************************/
+    /*EYE CATCHER IMAGESHOW************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #eyeCatcher {
+        display: normal;
+        position: fixed;
+        z-index: -1;
+        transition-delay: 1s;
+        transition-duration: 1s;
+    }
+
+    #imgShow {
+        display: none;
+    }
+
+    /**********************************************************************************************************************************/
+    /*MAIN CONTENT*********************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #mainContent {
+        display: block;
+        position: absolute;
+        overflow: auto;
+        text-overflow: ellipsis;
+        top: 96px;
+        left: 0px;
+        width: 100%;
+        padding: 25px;
+    }
+
+        /*override mainContent. Do not work without #mainContent....?*/
+        #mainContent.imageMainPage {
+            padding: 25px;
+            background-color: transparent;
+            transition-duration: 3s;
+        }
+
+        #mainContent.contentMainPage {
+            padding: 30px;
+        }
+
+        #mainContent.contentMainPage {
+            background-color: cornsilk;
+            height: 100%;
+            transition-duration: 5s;
+        }
+
+
+    /**********************************************************************************************************************************/
+    /*GROUP NAV************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    /*Layout the groupNav. FlyOut from the left.*/
+    #groupNav {
+        display: block;
+        position: absolute;
+        top: 96px;
+        left: 0px;
+        overflow: hidden;
+        background-color: azure;
+    }
+
+        #groupNav.smallShow {
+            width: 50%;
+            transition-duration: 1s;
+        }
+
+        #groupNav.smallHide {
+            width: 0px;
+            transition-duration: 1s;
+        }
+
+        #groupNav figure {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+            transition-duration: 1s;
+        }
+
+            #groupNav figure:hover {
+                opacity: 1;
+                transition-duration: 1s;
+            }
+
+            #groupNav figure img {
+                margin-left: 15%;
+                max-width: 70%;
+            }
+
+            #groupNav figure figcaption {
+                margin-left: 15%;
+                margin-right: 15%;
+                max-width: 70%;
+                text-align: center;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                opacity: 0.75;
+            }
+
+                #groupNav figure figcaption a {
+                    text-decoration: none;
+                    font-size: large;
+                    align-content: center;
+                }
+
+                #groupNav figure figcaption p {
+                    display: none;
+                }
+
+    /**********************************************************************************************************************************/
+    /*MAIN NAV ************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    /*Layout the mainNav. FlyOut from the top.*/
+    #mainNav {
+        display: block;
+        position: absolute;
+        top: 96px;
+        left: 0px;
+        width: 100%;
+        overflow: hidden;
+        background-color: azure;
+    }
+
+        #mainNav.smallShow {
+            height: 50%;
+            transition-duration: 1s;
+        }
+
+        #mainNav.smallHide {
+            height: 0px;
+            transition-duration: 1s;
+        }
+
+        #mainNav ul li a {
+            display: flex;
+            width: 90%;
+            height: 15%;
+            margin: 5%;
+            opacity: 0.75;
+            justify-content: center;
+            transition-duration: 1s;
+        }
+
+            #mainNav ul li a:hover {
+                font-size: larger;
+                opacity: 1;
+                transition-duration: 0.5s;
+            }
+
+    /**********************************************************************************************************************************/
+    /*SMALL BUTTONBAR******************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    /*Layout the smallButtonBar.*/
+    #smallButtonbar {
+        display: flex;
+        justify-content: space-between;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 96px;
+        background-color: #28aadc;
+        transition-duration: 2s;
+    }
+
+    /* smallButtonMiddle mit Kreuz rotierend - Hide */
+    div.smallButtonMiddle {
+        display: none;
+    }
+
+    /*Alle Einstellungen für smallButton zurück setzen.*/
+    .smallButtonLeft > Button, .smallButtonRight > Button {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 96px;
+        height: 96px;
+        font-size: 0;
+        text-indent: -9999px;
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
+        transition-duration: 2s;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    /*Grundsätzliche Einstellung für smallButton*/
+    .smallButtonLeft > Button, .smallButtonRight > Button {
+        background-color: #28aadc;
+        transition-duration: 3.0s;
+    }
+
+        .smallButtonLeft > Button.is-active, .smallButtonRight > Button.is-active {
+            background-color: #166888;
+        }
+
+    /* smallButtonLeft mit Kreuz rotierend */
+    div.smallButtonLeft button span {
+        display: block;
+        position: absolute;
+        top: 44px;
+        left: 18px;
+        right: 18px;
+        height: 8px;
+        background: white;
+        transform: rotate(45deg);
+        transition-duration: 0.4s;
+    }
+
+        div.smallButtonLeft button span::after {
+            position: absolute;
+            display: block;
+            top: 0%;
+            width: 100%;
+            height: 8px;
+            background-color: #fff;
+            content: "";
+            transform: rotate(90deg);
+        }
+
+    div.smallButtonLeft button.is-active span {
+        transform: rotate(90deg);
+    }
+
+    /* smallButtonRight mit Kreuz rotierend */
+    div.smallButtonRight button span {
+        display: block;
+        position: absolute;
+        top: 44px;
+        left: 18px;
+        right: 18px;
+        height: 8px;
+        background: white;
+        transform: rotate(45deg);
+        transition-duration: 0.4s;
+    }
+
+        div.smallButtonRight button span::after {
+            position: absolute;
+            display: block;
+            top: 0%;
+            width: 100%;
+            height: 8px;
+            background-color: #fff;
+            content: "";
+            transform: rotate(90deg);
+        }
+
+    div.smallButtonRight button.is-active span {
+        transform: rotate(90deg);
+    }
+
+    /**********************************************************************************************************************************/
+    /*IMAGE BOOK***********************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #mainImgBook {
+        flex-flow: row wrap;
+        background-color: transparent;
+        transition-duration: 2s;
+    }
+
+    .imageBookImage {
+        max-width: 30%;
+        margin: 0% 0% 2% 2%;
+        border-radius: 5px;
+        transition-delay: 2s;
+        transition-duration: 2s;
+    }
+
+    #mainImgBook img {
+        transition-duration: 3s;
+    }
+
+        #mainImgBook img:hover {
+            filter: drop-shadow(15px 15px 30px black);
+            transition-duration: 1s;
+        }
+
+    /**********************************************************************************************************************************/
+    /*INSTRUCTION SITE*****************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #smallInstruction {
+        display: normal;
+    }
+
+    #middleInstruction {
+        display: none;
+    }
+
+    #desctopInstruction {
+        display: none;
+    }
+
+    #middleInstructionArrow {
+        display: none;
+    }
+
+    #desctopInstructionArrow {
+        display: none;
+    }
+
+    #smallInstructionArrow {
+        display: flex;
+        width: 25%;
+        height: 25%;
+    }
+
+        #smallInstructionArrow img {
+            width: 100%;
+            height: 100%;
+        }
+
+            #smallInstructionArrow img.instructionArrow {
+                animation: rotate_0_min180 2s;
+                transform: rotate(-180deg);
+            }
+
+            #smallInstructionArrow img.instructionArrow2 {
+                animation: scale_0_min1 2s;
+                transform: scaleY(-1);
+            }
+
+    @keyframes rotate_0_min180 {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @keyframes scale_0_min1 {
+        from {
+            transform: scaleY(0);
+        }
+
+        to {
+            transform: scaleY(-1);
+        }
+    }
+
+    /**********************************************************************************************************************************/
+    /*BASE LINKPAGE************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+    #link {
+        display: block;
+        height: 100%;
+    }
+
+        #link li {
+            list-style: none;
+        }
+
+    .headerDescriber {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: x-large;
+    }
+
+    .linkDescriberContainer {
+        display: block;
+        margin: 10px;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: antiquewhite;
+        border-radius: 10px;
+    }
+
+    linkDescriberContainer a {
+        font-size: large;
+    }
+
+    /**********************************************************************************************************************************/
+    /*BASE CONTACTPAGE************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    fieldset {
+        margin: 10px;
+        padding: 20px 10px 20px 10px;
+    }
+
+    legend {
+        font-size: larger;
+    }
+
+    fieldset label {
+        margin: 5px;
+        margin-bottom: 1px;
+    }
+
+    input[type=checkbox] {
+        margin-bottom: 20px;
+    }
+
+        input[type=checkbox]:hover {
+            filter: drop-shadow(0px 0px 15px papayawhip);
+            transition-duration: 2s;
+        }
+
+    input[type=text], input[type=email], select {
+        height: 25px;
+        margin: 5px;
+        margin-top: 1px;
+        width: 95%;
+        min-width: 300px;
+    }
+
+        input[type=text]:focus, input[type=email]:focus, select:focus {
+            background-color: rgba(183, 169, 152,0.25);
+            border-color: transparent;
+            border-bottom-color: red;
+            transition-duration: 2s;
+        }
+
+    textarea {
+        margin: 5px;
+        margin-top: 1px;
+        left: 15%;
+        width: 95%;
+        min-width: 300px;
+    }
+
+        textarea:focus {
+            background-color: rgba(183, 169, 152,0.25);
+            border-color: transparent;
+            border-bottom-color: red;
+            transition-duration: 2s;
+        }
+
+    .accessibleFormfield, .accessibleNewsletterField, .accessibleSitePromotionField {
+        cursor: pointer;
+    }
+
+    .accessibleFormfieldButton {
+        height: 35px;
+        width: 105px;
+        margin: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: large;
+        background-color: rgba(255, 239, 213,1);
+        color: darkblue;
+        transition-duration: 2s;
+    }
+
+        .accessibleFormfieldButton:hover {
+            color: chocolate;
+            filter: drop-shadow(0px 0px 15px papayawhip);
+            transition-duration: 2s;
+        }
+}
+
+/**********************************************************************************************************************************/
+/*MIDDLE MEDIA**********************************************************************************************************************/
+/**********************************************************************************************************************************/
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+    /**********************************************************************************************************************************/
+    /*COMMON***************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    body {
+        background-color: rgb(36,30,26);
+        /*background-color: cornsilk;*/
+        transition-duration: 1s;
+    }
+
+    /*color for the selected main navigation.*/
+    #mainNav li.selected a {
+        color: crimson;
+        font-weight: bolder;
+    }
+
+    /**********************************************************************************************************************************/
+    /*PREVIEW**************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #previewImageContent.hidePreviewImage {
+        display: none;
+    }
+
+    #previewImageContent.showPreviewImage {
+        display: block;
+        position: fixed;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.9);
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+        #previewImageContent.showPreviewImage span:hover {
+            cursor: pointer;
+        }
+
+        #previewImageContent.showPreviewImage span {
+            display: block;
+            position: absolute;
+            border-radius: 4.5px;
+            top: 40px;
+            right: 5px;
+            width: 50px;
+            height: 8px;
+            transform: rotate(45deg);
+            background-color: whitesmoke;
+            transition-duration: 1s;
+        }
+
+            #previewImageContent.showPreviewImage span:after {
+                display: block;
+                position: absolute;
+                border-radius: 4.5px;
+                top: 0px;
+                right: 0px;
+                width: 50px;
+                height: 8px;
+                content: "";
+                transform: rotate(90deg);
+                background-color: whitesmoke;
+                transition-duration: 1s;
+            }
+
+        #previewImageContent.showPreviewImage img {
+            display: block;
+            margin: auto;
+            margin-top: 3%;
+            width: 80%;
+            transition-duration: 1s;
+            animation-name: zoomIn;
+            animation-duration: 1s;
+            border-radius: 10px;
+        }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes zoomOut {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(0);
+        }
+    }
+
+    /**********************************************************************************************************************************/
+    /*EYE CATCHER IMAGESHOW************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #eyeCatcher {
+        display: normal;
+        position: fixed;
+        z-index: -1;
+        transition-delay: 1s;
+        transition-duration: 1s;
+    }
+
+    #imgShow {
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        margin-left: auto;
+        margin-right: 10em;
+        width: 20em;
+        height: 20em;
+        overflow: hidden;
+    }
+
+    .imageShowImage {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        border-radius: 20px;
+        transition: opacity 5s linear;
+    }
+
+    /**********************************************************************************************************************************/
+    /*MAIN CONTENT*********************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #mainContent {
+        display: block;
+        position: absolute;
+        overflow: auto;
+        text-overflow: ellipsis;
+        top: 50px;
+        left: 0px;
+        width: 100%;
+        padding: 25px;
+        transition-duration: 5s;
+    }
+
+        /*override mainContent. Do not work without #mainContent....?*/
+        #mainContent.imageMainPage {
+            padding: 25px;
+            background-color: transparent;
+            transition-duration: 3s;
+        }
+
+        #mainContent.contentMainPage {
+            padding: 30px;
+        }
+
+        #mainContent.contentMainPage {
+            background-color: cornsilk;
+            height: 100%;
+            transition-duration: 5s;
+        }
+
+    /**********************************************************************************************************************************/
+    /*GROUP NAV************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    /*Layout the groupNav. FlyOut from the left.*/
+    #groupNav {
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        overflow: hidden;
+        background-color: azure;
+        transition-duration: 5s;
+    }
+
+        #groupNav.smallShow {
+            width: 50%;
+            transition-duration: 1s;
+        }
+
+        #groupNav.smallHide {
+            width: 0px;
+            transition-duration: 2s;
+        }
+
+        #groupNav figure {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+            transition-duration: 1s;
+        }
+
+            #groupNav figure:hover {
+                opacity: 1;
+                transition-duration: 1s;
+            }
+
+            #groupNav figure img {
+                margin-left: 15%;
+                max-width: 70%;
+            }
+
+            #groupNav figure figcaption {
+                margin-left: 15%;
+                margin-right: 15%;
+                max-width: 70%;
+                text-align: center;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                opacity: 0.75;
+            }
+
+                #groupNav figure figcaption a {
+                    text-decoration: none;
+                    font-size: x-large;
+                    align-content: center;
+                }
+
+                #groupNav figure figcaption p {
+                    display: none;
+                    transition-duration: 2s;
+                }
+
+    /**********************************************************************************************************************************/
+    /*MAIN NAV ************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    /*Layout the mainNav. FlyOut from the top.*/
+    #mainNav {
+        display: flex;
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background-color: transparent;
+        transition-duration: 2s;
+        justify-content: flex-end;
+        margin-right: 10px;
+        transition-duration: 5s;
+    }
+
+        #mainNav ul li {
+            display: inline-flex;
+            justify-content: center;
+            height: 25px;
+            width: 100px;
+        }
+
+            #mainNav ul li a {
+                opacity: 0.75;
+                color: darkblue;
+                transition-duration: 1.75s;
+            }
+
+                #mainNav ul li a:hover {
+                    font-size: larger;
+                    opacity: 1.0;
+                    transition-duration: 0.25s;
+                }
+
+    /**********************************************************************************************************************************/
+    /*SMALL BUTTONBAR******************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    /*Layout the smallButtonBar.*/
+    #smallButtonbar {
+        display: flex;
+        justify-content: space-between;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        background-color: #28aadc;
+        transition-duration: 2s;
+    }
+
+    /* smallButtonMiddle mit Kreuz rotierend - Hide */
+    div.smallButtonMiddle {
+        display: none;
+    }
+
+    div.smallButtonRight > button {
+        display: none;
+    }
+
+    div.smallButtonRight {
+        opacity: 1;
+    }
+
+    /*Alle Einstellungen für smallButton zurück setzen.*/
+    .smallButtonLeft > Button {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 50px;
+        height: 50px;
+        font-size: 0;
+        text-indent: -9999px;
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
+        transition: background 1.3s;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    /*Grundsätzliche Einstellung für smallButton*/
+    .smallButtonLeft > Button {
+        background-color: #28aadc;
+        transition-duration: 3.0s;
+    }
+
+        .smallButtonLeft > Button.is-active {
+            background-color: #166888;
+        }
+
+
+    /* smallButtonLeft mit Kreuz rotierend */
+    div.smallButtonLeft button span {
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 15px;
+        right: 15px;
+        height: 2px;
+        background: white;
+        transform: rotate(45deg);
+        transition-duration: 0.4s;
+    }
+
+        div.smallButtonLeft button span::after {
+            position: absolute;
+            display: block;
+            top: 0%;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            content: "";
+            transform: rotate(90deg);
+            transition-duration: 0.4s;
+        }
+
+    div.smallButtonLeft button.is-active span {
+        transform: rotate(90deg);
+    }
+
+    /**********************************************************************************************************************************/
+    /*IMAGE BOOK***********************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #mainImgBook {
+        flex-flow: row wrap;
+        background-color: transparent;
+        transition-duration: 2s;
+    }
+
+    .imageBookImage {
+        max-width: 30%;
+        margin: 0% 0% 2% 2%;
+        border-radius: 5px;
+    }
+
+    #mainImgBook img {
+        /*background-color: gray;*/
+        transition-duration: 3s;
+    }
+
+        #mainImgBook img:hover {
+            /*background-color: gray;*/
+            filter: drop-shadow(15px 15px 30px black);
+            transition-duration: 1s;
+        }
+
+    /**********************************************************************************************************************************/
+    /*INSTRUCTION SITE*****************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #smallInstruction {
+        display: none;
+    }
+
+    #middleInstruction {
+        display: normal;
+    }
+
+    #desctopInstruction {
+        display: none;
+    }
+
+    #smallInstructionArrow {
+        display: none;
+    }
+
+    #desctopInstructionArrow {
+        display: none;
+    }
+
+    #middleInstructionArrow {
+        display: flex;
+        width: 25%;
+        height: 25%;
+    }
+
+        #middleInstructionArrow img {
+            width: 100%;
+            height: 100%;
+        }
+
+            #middleInstructionArrow img.instructionArrow {
+                animation: rotate_0_min180 2s;
+                transform: rotate(-180deg);
+            }
+
+            #middleInstructionArrow img.instructionArrow2 {
+                animation: rotate_0_min90 2s;
+                transform: rotate(-90deg);
+            }
+
+    @keyframes rotate_0_min180 {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @keyframes rotate_0_min90 {
+        from {
+            transform: rotate(-0);
+        }
+
+        to {
+            transform: rotate(-90);
+        }
+    }
+
+    /**********************************************************************************************************************************/
+    /*BASE LINKPAGE************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #link li {
+        list-style: none;
+    }
+
+    .headerDescriber {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: x-large;
+    }
+
+    .linkDescriberContainer {
+        display: block;
+        margin: 10px;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: antiquewhite;
+        border-radius: 10px;
+    }
+
+    linkDescriberContainer a {
+        font-size: large;
+    }
+
+    /**********************************************************************************************************************************/
+    /*BASE LINKPAGE************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    fieldset {
+        margin: 10px;
+        padding: 20px 10px 20px 10px;
+    }
+
+    legend {
+        font-size: larger;
+    }
+
+    fieldset label {
+        margin: 5px;
+        margin-bottom: 1px;
+    }
+
+    input[type=checkbox] {
+        margin-bottom: 20px;
+    }
+
+        input[type=checkbox]:hover {
+            filter: drop-shadow(0px 0px 15px papayawhip);
+            transition-duration: 2s;
+        }
+
+    input[type=text], input[type=email], select {
+        height: 25px;
+        margin: 5px;
+        margin-top: 1px;
+        width: 95%;
+        min-width: 300px;
+    }
+
+        input[type=text]:focus, input[type=email]:focus, select:focus {
+            background-color: rgba(183, 169, 152,0.25);
+            border-color: transparent;
+            border-bottom-color: red;
+            transition-duration: 2s;
+        }
+
+    textarea {
+        margin: 5px;
+        margin-top: 1px;
+        left: 15%;
+        width: 95%;
+        min-width: 300px;
+    }
+
+        textarea:focus {
+            background-color: rgba(183, 169, 152,0.25);
+            border-color: transparent;
+            border-bottom-color: red;
+            transition-duration: 2s;
+        }
+
+    .accessibleFormfield, .accessibleNewsletterField, .accessibleSitePromotionField {
+        cursor: pointer;
+    }
+
+    .accessibleFormfieldButton {
+        height: 35px;
+        width: 105px;
+        margin: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: large;
+        background-color: rgba(255, 239, 213,1);
+        color: darkblue;
+        transition-duration: 2s;
+    }
+
+        .accessibleFormfieldButton:hover {
+            color: chocolate;
+            filter: drop-shadow(0px 0px 15px papayawhip);
+            transition-duration: 2s;
+        }
+}
+
+/**********************************************************************************************************************************/
+/*BIG MEDIA**********************************************************************************************************************/
+/**********************************************************************************************************************************/
+@media only screen and (min-width: 1025px) {
+    /**********************************************************************************************************************************/
+    /*COMMON***************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    body {
+        background-color: rgb(36,30,26);
+    }
+
+    /*color for the selected main navigation.*/
+    #mainNav li.selected a {
+        color: crimson;
+        font-weight: bolder;
+    }
+
+    /**********************************************************************************************************************************/
+    /*PREVIEW**************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #previewImageContent.hidePreviewImage {
+        display: none;
+    }
+
+    #previewImageContent.showPreviewImage {
+        display: block;
+        position: fixed;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.9);
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+        #previewImageContent.showPreviewImage span:hover {
+            cursor: pointer;
+        }
+
+        #previewImageContent.showPreviewImage span {
+            display: block;
+            position: absolute;
+            border-radius: 4.5px;
+            top: 80px;
+            right: 10px;
+            width: 80px;
+            height: 9px;
+            transform: rotate(45deg);
+            background-color: whitesmoke;
+            transition-duration: 1s;
+        }
+
+            #previewImageContent.showPreviewImage span:after {
+                display: block;
+                position: absolute;
+                border-radius: 4.5px;
+                top: 0px;
+                right: 0px;
+                width: 80px;
+                height: 9px;
+                content: "";
+                transform: rotate(90deg);
+                background-color: whitesmoke;
+                transition-duration: 1s;
+            }
+
+        #previewImageContent.showPreviewImage img {
+            display: block;
+            margin: auto;
+            margin-top: 5%;
+            width: 75%;
+            transition-duration: 1s;
+            animation-name: zoomIn;
+            animation-duration: 1s;
+            border-radius: 10px;
+        }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes zoomOut {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(0);
+        }
+    }
+
+    /**********************************************************************************************************************************/
+    /*EYE CATCHER IMAGESHOW************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #eyeCatcher {
+        display: normal;
+        position: fixed;
+        transition-delay: 1s;
+        transition-duration: 1s;
+    }
+
+    #imgShow {
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        margin-left: auto;
+        margin-right: 10em;
+        width: 20em;
+        height: 20em;
+        overflow: hidden;
+    }
+
+    .imageShowImage {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        border-radius: 20px;
+        transition: opacity 5s linear;
+    }
+
+    /**********************************************************************************************************************************/
+    /*MAIN CONTENT*********************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #mainContent {
+        display: block;
+        position: absolute;
+        border-radius: 20px;
+        overflow: auto;
+        text-overflow: ellipsis;
+        top: 30%;
+        left: 20%;
+        width: 78%;
+        padding: 25px;
+        transition-duration: 5s;
+    }
+
+        /*override mainContent. Do not work without #mainContent....?*/
+        #mainContent.imageMainPage {
+            padding: 25px;
+            background-color: transparent;
+            transition-duration: 3s;
+        }
+
+        #mainContent.contentMainPage {
+            padding: 30px;
+            background-color: cornsilk;
+            transition-duration: 3s;
+        }
+
+    /**********************************************************************************************************************************/
+    /*GROUP NAV************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    /*Layout the groupNav. FlyOut from the left.*/
+    #groupNav {
+        display: block;
+        position: absolute;
+        top: 5%;
+        left: 1%;
+        width: 15%;
+        overflow: hidden;
+        background-color: transparent;
+        transition-duration: 2s;
+    }
+
+        #groupNav li.selected a {
+            color: darkorange;
+        }
+
+        #groupNav figure {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            background-color: gray;
+            border-radius: 10px;
+            opacity: 0.5;
+            transition-duration: 1s;
+        }
+
+            #groupNav figure:hover {
+                cursor: pointer;
+                opacity: 1;
+                transition-duration: 1s;
+            }
+
+            #groupNav figure img {
+                border-radius: 5px 5px 10px 10px;
+                margin-left: 5%;
+                margin-right: 5%;
+                width: 90%;
+                transition-duration: 1s;
+            }
+
+                #groupNav figure img:hover {
+                    margin-left: 4%;
+                    margin-right: 4%;
+                    width: 92%;
+                    transition-duration: 1s;
+                }
+
+            #groupNav figure figcaption {
+                margin-left: 10%;
+                margin-right: 10%;
+                text-align: center;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+                #groupNav figure figcaption a {
+                    text-decoration: none;
+                    font-size: large;
+                    align-content: center;
+                }
+
+                #groupNav figure figcaption p {
+                    text-align: left;
+                    background-color: gray;
+                    transition-duration: 2s;
+                }
+
+    /**********************************************************************************************************************************/
+    /*MAIN NAV ************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    /*Layout the mainNav. FlyOut from the top.*/
+    #mainNav {
+        display: flex;
+        position: absolute;
+        top: 20%;
+        right: 0px;
+        width: 70%;
+        min-height: 5%;
+        border-radius: 0px 10px 10px 0px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: linear-gradient(to right, rgba(255,0,0,0), papayawhip);
+        filter: drop-shadow(0px 0px 15px papayawhip);
+        transition-duration: 2s;
+        justify-content: flex-end;
+        margin-right: 25px;
+    }
+
+        #mainNav li.selected a {
+            color: chocolate;
+        }
+
+        #mainNav ul li {
+            display: inline-flex;
+            justify-content: center;
+            border-radius: 5px;
+            height: 5%;
+            padding: 2%;
+            width: 110px;
+            transition-duration: 2s;
+        }
+
+            #mainNav ul li a {
+                opacity: 0.75;
+                color: darkblue;
+                font-size: large;
+                transition-duration: 1s;
+            }
+
+                #mainNav ul li a:hover {
+                    color: chocolate;
+                    transition-duration: 1s;
+                }
+
+    /**********************************************************************************************************************************/
+    /*SMALL BUTTONBAR******************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    /*Layout the smallButtonBar.*/
+    #smallButtonbar {
+        opacity: 0;
+        transition-duration: 2s;
+    }
+
+    div.smallButtonLeft {
+        display: none;
+    }
+
+    /* smallButtonMiddle mit Kreuz rotierend - Hide */
+    div.smallButtonMiddle {
+        display: none;
+    }
+
+    div.smallButtonRight > button {
+        display: none;
+    }
+
+    div.smallButtonRight {
+        display: none;
+    }
+
+    /**********************************************************************************************************************************/
+    /*IMAGE BOOK***********************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #mainImgBook {
+        flex-flow: row wrap;
+        background-color: transparent;
+        transition-duration: 2s;
+    }
+
+    .imageBookImage {
+        max-width: 30%;
+        margin: 0% 0% 2% 2%;
+        border-radius: 5px;
+    }
+
+    #mainImgBook img {
+        /*background-color: gray;*/
+        transition-duration: 3s;
+    }
+
+        #mainImgBook img:hover {
+            /*background-color: gray;*/
+            filter: drop-shadow(15px 15px 30px black);
+            transition-duration: 1s;
+        }
+
+    /**********************************************************************************************************************************/
+    /*INSTRUCTION SITE*****************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #smallInstruction {
+        display: none;
+    }
+
+    #middleInstruction {
+        display: none;
+    }
+
+    #desctopInstruction {
+        display: normal;
+    }
+
+    #smallInstructionArrow {
+        display: none;
+    }
+
+    #middleInstructionArrow {
+        display: none;
+    }
+
+    #desctopInstructionArrow {
+        display: flex;
+        width: 25%;
+        height: 25%;
+    }
+
+        #desctopInstructionArrow img {
+            width: 100%;
+            height: 100%;
+        }
+
+            #desctopInstructionArrow img.instructionArrow {
+                animation: rotate_0_min1803 2s;
+                animation: scaleX_0_min13 5s;
+                transform: rotate(-180deg);
+                transform: scaleX(-1);
+            }
+
+            #desctopInstructionArrow img.instructionArrow2 {
+                animation: rotate_0_min903 2s;
+                transform: rotate(-90deg);
+            }
+
+    @keyframes rotate_0_min1803 {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @keyframes rotate_0_min903 {
+        from {
+            transform: rotate(-0);
+        }
+
+        to {
+            transform: rotate(-90deg);
+        }
+    }
+
+    @keyframes scaleY_0_min13 {
+        from {
+            transform: scaleX(0);
+        }
+
+        to {
+            transform: scaleX(-1);
+        }
+    }
+
+    /**********************************************************************************************************************************/
+    /*BASE LINKPAGE************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    #link li {
+        list-style: none;
+    }
+
+    .headerDescriber {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: x-large;
+    }
+
+    .linkDescriberContainer {
+        display: block;
+        margin: 10px;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: antiquewhite;
+        border-radius: 10px;
+    }
+
+    linkDescriberContainer a {
+        font-size: large;
+    }
+
+    /**********************************************************************************************************************************/
+    /*BASE LINKPAGE************************************************************************************************************************/
+    /**********************************************************************************************************************************/
+
+    fieldset {
+        margin: 10px;
+        padding: 20px 10px 20px 10px;
+    }
+
+    legend {
+        font-size: larger;
+    }
+
+    fieldset label {
+        margin: 5px;
+        margin-bottom: 1px;
+    }
+
+    input[type=checkbox] {
+        margin-bottom: 20px;
+    }
+
+        input[type=checkbox]:hover {
+            filter: drop-shadow(0px 0px 15px papayawhip);
+            transition-duration: 2s;
+        }
+
+    input[type=text], input[type=email], select {
+        height: 25px;
+        margin: 5px;
+        margin-top: 1px;
+        width: 95%;
+        min-width: 300px;
+    }
+
+        input[type=text]:focus, input[type=email]:focus, select:focus {
+            background-color: rgba(183, 169, 152,0.25);
+            border-color: transparent;
+            border-bottom-color: red;
+            transition-duration: 2s;
+        }
+
+    textarea {
+        margin: 5px;
+        margin-top: 1px;
+        left: 15%;
+        width: 95%;
+        min-width: 300px;
+    }
+
+        textarea:focus {
+            background-color: rgba(183, 169, 152,0.25);
+            border-color: transparent;
+            border-bottom-color: red;
+            transition-duration: 2s;
+        }
+
+    .accessibleFormfield, .accessibleNewsletterField, .accessibleSitePromotionField {
+        cursor: pointer;
+    }
+
+    .accessibleFormfieldButton {
+        height: 35px;
+        width: 105px;
+        margin: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: large;
+        background-color: rgba(255, 239, 213,1);
+        color: darkblue;
+        transition-duration: 2s;
+    }
+
+        .accessibleFormfieldButton:hover {
+            color: chocolate;
+            filter: drop-shadow(0px 0px 15px papayawhip);
+            transition-duration: 2s;
+        }
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="database" type="databaseDefn"/>
+	<xs:complexType name="databaseDefn">
+		<xs:sequence>
+			<xs:element name="root" type="xs:string"/>
+			<xs:element name="favicon" type="xs:anyURI"/>
+			<xs:element maxOccurs="1" minOccurs="1" ref="sizes"/>
+			<xs:element maxOccurs="1" minOccurs="1" ref="imgShow"/>
+			<xs:element maxOccurs="1" minOccurs="1" ref="groups"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="sizes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="1" minOccurs="1" name="small" type="xs:string"/>
+        <xs:element maxOccurs="1" minOccurs="1" name="middle" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="large" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="preview" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="imgShow">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="showImage" type="xs:anyURI"/>
+			</xs:sequence>
+			<xs:attribute name="enabled" type="xs:boolean"/>
+      <xs:attribute name="period" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="groups">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="1" ref="group"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="group">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="images">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="1" name="image" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID"/>
+			<xs:attribute name="path" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

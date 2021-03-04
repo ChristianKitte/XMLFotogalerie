@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="index.xsl" ?>
+
+<documentTemplate xsi:noNamespaceSchemaLocation="index.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- Defines an siteimage -->
+	<siteImage>
+		<title>Eine Sonne als EyeCatcher für den Hintergrund</title>
+		<alt>Eine Sonne als EyeCatcher für den Hintergrund</alt>
+		<source>img/Intro/eyecatcher.jpg</source>
+	</siteImage>
+	<!-- Defines the main menue -->
+	<mainNavigation>
+		<!-- An item -->
+		<mnItem>
+			<!-- A unique ID -->
+      		<!-- ContentGrpID-1 stands for HOME and page default is ./pages/home.html-->
+      		<!-- If neccesarie changes must be reflexted within the Loader.js-->
+			<id>ContentGrpID-1</id>
+			<!-- The Caption -->
+			<caption>Home</caption>
+			<!-- The title -->
+			<title>Zum Homebereich</title>
+			<!-- targets to an page with content -->
+			<source>./pages/home.html</source>
+			<!-- The DIV Container to show the content -->
+			<target>mainContent</target>
+			<!-- The TAB-Index -->
+			<tab>0</tab>
+			<!-- Defines wether to set as selected or not -->
+			<select>true</select>
+		</mnItem>
+		<mnItem>
+			<id>ContentGrpID-2</id>
+			<caption>Kontakt</caption>
+			<title>Zum Kontaktbereich</title>
+			<source>./pages/contact.html</source>
+			<target>mainContent</target>
+			<tab>1</tab>
+			<select>false</select>
+		</mnItem>
+		<mnItem>
+			<id>ContentGrpID-3</id>
+			<caption>Links</caption>
+			<title>Zur Linkliste</title>
+			<source>./pages/link.html</source>
+			<target>mainContent</target>
+			<tab>2</tab>
+			<select>false</select>
+		</mnItem>
+		<mnItem>
+			<id>ContentGrpID-4</id>
+			<caption>Über mich</caption>
+			<title>Zu meiner Person</title>
+			<source>./pages/about.html</source>
+			<target>mainContent</target>
+			<tab>3</tab>
+			<select>false</select>
+		</mnItem>
+		<mnItem>
+			<id>ContentGrpID-5</id>
+			<caption>Impressum</caption>
+			<title>Zu den Pflichtangaben</title>
+			<source>./pages/sitenotice.html</source>
+			<target>mainContent</target>
+			<tab>4</tab>
+			<select>false</select>
+		</mnItem>
+	</mainNavigation>
+	<!-- Defines the group menue of images -->
+	<groupNavigation>
+		<!-- An item -->
+		<gnItem>
+			<!-- A unique ID with referenced to a group within database.xml. -->
+			<id>ImageGrpID-1</id>
+			<!-- The Caption -->
+			<caption>Blumen</caption>
+			<!-- The preview image -->
+			<prevImage>./img/img_320/Blumen/20100708_0044.JPG</prevImage>
+			<!-- The preview image text -->
+			<prevImageText>Das ist die Gruppe Blumen</prevImageText>
+			<!-- The title -->
+			<title>Vorschaubild der Gruppe Blumen</title>
+			<!-- The ALT text -->
+			<alt>Vorschaubild der Gruppe Blumen</alt>
+			<!-- The DIV Container to show the content -->
+			<target>mainContent</target>
+			<!-- The TAB-Index -->
+			<tab>5</tab>
+			<!-- Defines wether to set as selected or not -->
+			<select>false</select>
+		</gnItem>
+		<gnItem>
+			<id>ImageGrpID-2</id>		
+			<caption>Hermannsturm</caption>
+			<prevImage>./img/img_320/Hermannsturm/DSC05021_bearbeitet.jpg</prevImage>
+			<prevImageText>Das ist die Gruppe Hermannsturm</prevImageText>
+			<title>Vorschaubild der Gruppe Hermannsturm</title>
+			<alt>Vorschaubild der Gruppe Hermannsturm</alt>
+			<target>mainContent</target>
+			<tab>6</tab>
+			<select>false</select>
+		</gnItem>
+		<gnItem>
+			<id>ImageGrpID-3</id>
+			<caption>Teich</caption>
+			<prevImage>./img/img_320/Teich/DSC04048.JPG</prevImage>
+			<prevImageText>Das ist die Gruppe Teich</prevImageText>
+			<title>Vorschaubild der Gruppe Teich</title>
+			<alt>Vorschaubild der Gruppe Teich</alt>
+			<target>mainContent</target>
+			<tab>7</tab>
+			<select>false</select>
+		</gnItem>
+		<gnItem>
+			<id>ImageGrpID-4</id>
+			<caption>Varrusschlacht</caption>
+			<prevImage>./img/img_320/Varusschlacht/DSC00636.JPG</prevImage>
+			<prevImageText>Das ist die Gruppe Varrusschlacht</prevImageText>
+			<title>Vorschaubild der Gruppe Varrusschlacht</title>
+			<alt>Vorschaubild der Gruppe Varrusschlacht</alt>
+			<target>mainContent</target>
+			<tab>8</tab>
+			<select>false</select>
+		</gnItem>
+		<gnItem>
+			<id>ImageGrpID-5</id>
+			<caption>Winterimpressionen</caption>
+			<prevImage>./img/img_320/Winterimpression/IMG_3695.JPG</prevImage>
+			<prevImageText>Das ist die Gruppe Winterimpressionen</prevImageText>
+			<title>Vorschaubild der Gruppe Winterimpressionen</title>
+			<alt>Vorschaubild der Gruppe Winterimpressionen</alt>
+			<target>mainContent</target>
+			<tab>9</tab>
+			<select>false</select>
+		</gnItem>
+	</groupNavigation>
+</documentTemplate>

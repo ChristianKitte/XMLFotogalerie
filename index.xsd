@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="documentTemplate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="siteImage" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="mainNavigation" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="groupNavigation" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="siteImage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="alt" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="source" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="mainNavigation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="mnItem" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="mnItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="caption" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="source" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="target" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="tab" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="select" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="groupNavigation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gnItem" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gnItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="caption" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="prevImage" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="prevImageText" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="alt" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="target" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="tab" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="select" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

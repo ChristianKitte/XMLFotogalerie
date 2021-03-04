@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head on onloadedmetadata="setFavicon()">
+    <meta charset="utf-8" />
+    <title>Just another Image Page (jaip)</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" type="image/svg" href="img/img_favicon/feather_favicon.ico" />
+    <script src="js/Loader.js">
+        Leider unterstützt ihr Browser kein JavaScript
+    </script>
+</head>
+
+<body>
+    <img id="eyeCatcher" alt="Eine Sonne als EyeCatcher für den Hintergrund" title="Eine Sonne als EyeCatcher für den Hintergrund" src="img/Intro/eyecatcher.jpg" />
+
+    <div id="mainContent">
+
+    </div>
+
+    <nav id="mainNav">
+        <ul>
+            <li id="contentGrpID-1" class="selected"><a tabindex="0" href="#" onclick="getContent('./pages/home.html','mainContent')" title="Zum Homebereich">Home</a> </li>
+            <li id="contentGrpID-2" class="unselected"><a tabindex="0" href="#" onclick="getContent('./pages/contact.html','mainContent')" title="Zum Kontaktbereich">Kontakt</a> </li>
+            <li id="contentGrpID-3" class="unselected"><a tabindex="0" href="#" onclick="getContent('./pages/link.html','mainContent')" title="Zur Linkliste">Links</a> </li>
+            <li id="contentGrpID-4" class="unselected"><a tabindex="0" href="#" onclick="getContent('./pages/about.html','mainContent')" title="Zu meiner Person">About</a> </li>
+            <li id="contentGrpID-5" class="unselected"><a tabindex="0" href="#" onclick="getContent('./pages/sitenotice.html','mainContent')" title="Zu den Pflichtangaben">Impressum</a> </li>
+        </ul>
+    </nav>
+
+    <nav id="groupNav">
+        <ul>
+            <li id="imgGrp1" class="selected">
+                <figure>
+                    <img class="groupPreview" alt="Vorschuabild einer Gruppe" title="Vorschaubild einer Gruppe" src="./img/img_320/Blumen/20100708_0044.JPG" />
+                    <figcaption class="groupDescriptorHead">
+                        <a class="groupCaller" href="#" onclick="getContent('./img/img_320/Blumen','mainContent')">Blumen</a>
+                        <p class="groupDescriptor">Das ist eine Beschreibung</p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li id="imgGrp2" class="unselected">
+                <figure>
+                    <img class="groupPreview" alt="Vorschaubild einer Gruppe" title="Vorschaubild einer Gruppe" src="./img/img_320/Hermannsturm/DSC05021 bearbeitet.jpg" />
+                    <figcaption class="groupDescriptorHead">
+                        <a class="groupCaller" href="#" onclick="getContent('./img/mock/Hermannsturm/image.txt','mainContent')">Hermannsturm</a>
+                        <p class="groupDescriptor">Das ist eine Beschreibung</p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li id="imgGrp3" class="unselected">
+                <figure>
+                    <img class="groupPreview" alt="Vorschaubild einer Gruppe" title="Vorschaubild einer Gruppe" src="./img/img_320/Teich/DSC04025.JPG" />
+                    <figcaption class="groupDescriptorHead">
+                        <a class="groupCaller" href="#" onclick="getContent('./img/mock/Teich/image.txt','mainContent')">Teich</a>
+                        <p class="groupDescriptor">Das ist eine Beschreibung</p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li id="imgGrp4" class="unselected">
+                <figure>
+                    <img class="groupPreview" alt="Vorschaubild einer Gruppe" title="Vorschaubild einer Gruppe" src="./img/img_320/Varusschlacht/DSC00636.JPG" />
+                    <figcaption class="groupDescriptorHead">
+                        <a class="groupCaller" href="#" onclick="getContent('./img/mock/Varusschlacht/image.txt','mainContent')">Varrusschlacht</a>
+                        <p class="groupDescriptor">Das ist eine Beschreibung</p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li id="imgGrp5" class="unselected">
+                <figure>
+                    <img class="groupPreview" alt="Vorschaubild einer Gruppe" title="Vorschaubild einer Gruppe" src="./img/img_320/Winterimpression/IMG_3695.JPG" />
+                    <figcaption class="groupDescriptorHead">
+                        <a class="groupCaller" href="#" onclick="getContent('./img/mock/Winterimpressionen/image.txt','mainContent')">Winterimpressionen</a>
+                        <p class="groupDescriptor">Ds ist eine Beschreibung</p>
+                    </figcaption>
+                </figure>
+            </li>
+        </ul>
+    </nav>
+
+
+</body>
+
+</html>

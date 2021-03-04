@@ -1,0 +1,308 @@
+﻿/*auch wenn utf-8 Standard ist*/
+@charset "utf-8";
+
+.instructionArrow {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 640px) {
+    #smallInstruction {
+        display: normal;
+    }
+
+    #middleInstruction {
+        display: none;
+    }
+
+    #desctopInstruction {
+        display: none;
+    }
+
+    #smallInstructionArrow {
+        display: flex;
+        box-sizing: border-box;
+        width: 25%;
+        height: 25%;
+    }
+
+        #smallInstructionArrow img {
+            width: 100%;
+            height: 100%;
+        }
+
+            #smallInstructionArrow img.instructionArrow {
+                animation: rotate_0_min180 2s;
+                transform: rotate(-180deg);
+            }
+
+            #smallInstructionArrow img.instructionArrow2 {
+                animation: scale_0_min1 2s;
+                transform: scaleY(-1);
+            }
+
+    @keyframes rotate_0_min180 {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @keyframes scale_0_min1 {
+        from {
+            transform: scaleY(0);
+        }
+
+        to {
+            transform: scaleY(-1);
+        }
+    }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+    #smallInstruction {
+        display: none;
+    }
+
+    #middleInstruction {
+        display: normal;
+    }
+
+    #desctopInstruction {
+        display: none;
+    }
+
+    #middleInstructionArrow {
+        display: flex;
+        box-sizing: border-box;
+        width: 25%;
+        height: 25%;
+    }
+
+        #middleInstructionArrow img {
+            width: 100%;
+            height: 100%;
+        }
+
+            #middleInstructionArrow img.instructionArrow {
+                animation: rotate_0_min180 2s;
+                transform: rotate(-180deg);
+            }
+
+            #middleInstructionArrow img.instructionArrow2 {
+                animation: rotate_0_min90 2s;
+                transform: rotate(-90deg);
+            }
+
+    @keyframes rotate_0_min180 {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @keyframes rotate_0_min90 {
+        from {
+            transform: rotate(-0);
+        }
+
+        to {
+            transform: rotate(-90);
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #smallInstruction {
+        display: none;
+    }
+
+    #middleInstruction {
+        display: none;
+    }
+
+    #desctopInstruction {
+        display: normal;
+    }
+
+    #desctopInstructionArrow {
+        display: flex;
+        box-sizing: border-box;
+        width: 25%;
+        height: 25%;
+    }
+
+        #desctopInstructionArrow img {
+            width: 100%;
+            height: 100%;
+        }
+
+            #desctopInstructionArrow img.instructionArrow {
+                animation: rotate_0_min1803 2s;
+                animation: scaleX_0_min13 5s;
+                transform: rotate(-180deg);
+                transform: scaleX(-1);
+            }
+
+            #desctopInstructionArrow img.instructionArrow2 {
+                animation: rotate_0_min903 2s;
+                transform: rotate(-90deg);
+            }
+
+    @keyframes rotate_0_min1803 {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @keyframes rotate_0_min903 {
+        from {
+            transform: rotate(-0);
+        }
+
+        to {
+            transform: rotate(-90deg);
+        }
+    }
+
+    @keyframes scaleY_0_min13 {
+        from {
+            transform: scaleX(0);
+        }
+
+        to {
+            transform: scaleX(-1);
+        }
+    }
+}
+
+
+
+
+
+.groupDescriptor {
+    background-color: cornsilk;
+}
+
+#eyeCatcher {
+    width: 512px;
+}
+
+#mainContent {
+    height: 300px;
+}
+
+#mainNav li.selected a {
+    color: red;
+}
+
+#groupNav li.selected a {
+    color: red;
+}
+
+.groupPreview {
+    width: 100px;
+}
+
+    .groupPreview:hover {
+        width: 150px;
+    }
+
+#mainContent {
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#imageBook {
+    display: inline-block;
+    width: 5px;
+    /*box-sizing: content-box;*/
+    display: inline-flex;
+    max-width: 100px;
+}
+
+.accessibleFormfield {
+    color: black;
+}
+
+.notAccessibleFormfield {
+    color: gray;
+}
+
+.accessibleSitePromotionField {
+    color: black;
+}
+
+.notAccessibleSitePromotionField {
+    color: gray;
+}
+
+a[href*="http"]::after {
+    content: url(/img/Intro/externalLink.png);
+    margin-left: 1em;
+}
+
+#imageBook {
+    display:block;
+    box-sizing:border-box;
+    width:100px;
+    height:100px;
+}
+
+#imageBookImage {
+    display:block;
+    box-sizing:border-box;
+    max-width:100px;
+    max-height:100px;
+}
+
+
+#imgShow {
+    display: block;
+    box-sizing:border-box;
+    position:relative;
+    margin-left:auto;
+    margin-right: 10em;
+    width: 20em;
+    height: 20em;
+    overflow:hidden;
+}
+
+.imageShowImage {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    border-radius: 20px;
+    transition: opacity 5s linear;
+}
+
+#prevContainer {
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
